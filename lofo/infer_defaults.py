@@ -1,9 +1,9 @@
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-from lightgbm import LGBMClassifier, LGBMRegressor
 
 
 def infer_model(df, features, y, n_jobs):
+    from lightgbm import LGBMClassifier, LGBMRegressor
     model_class = LGBMRegressor
     if len(np.unique(y)) == 2:
         y = LabelEncoder().fit_transform(y)
